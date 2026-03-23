@@ -62,13 +62,29 @@ Este proyecto está construido sin frameworks para mantener un control absoluto 
 ```text
 /tutecnico
 ├── /app
-│   ├── /controllers    # Lógica de intermediación
-│   ├── /models         # Consultas a la base de datos y reglas de negocio
-│   └── /views          # Interfaces de usuario (HTML/PHP)
-├── /public
-│   ├── /css            # Hojas de estilo
-│   ├── /js             # Scripts del cliente
-│   └── /img            # Imágenes y recursos estáticos
-├── /config             # Configuraciones globales y conexión a BD
-├── index.php           # Front Controller (Punto de entrada único)
-└── README.md           # Documentación del proyecto
+│   ├── /Controllers
+│   ├── /Models
+│   ├── /Views
+│   └── /Core            # Router, Request, Response, DB base
+├── /public              # ← Document root del servidor
+│   ├── index.php        # ← Front controller aquí, no en la raíz
+│   ├── /css
+│   ├── /js
+│   └── /img
+├── /config
+│   ├── app.php
+│   └── database.php
+├── /database
+│   ├── /migrations      # Estructura de tablas versionada
+│   └── /seeders         # Datos de prueba
+├── /routes
+│   └── web.php          # Definición de rutas
+├── /tests
+│   ├── /Unit
+│   └── /Integration
+├── /storage
+│   └── /logs
+├── .env.example
+├── .env                 # ← en .gitignore
+├── composer.json
+└── README.md
